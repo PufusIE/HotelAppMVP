@@ -1,10 +1,5 @@
 ﻿using HotelAppLibrary.Databases;
 using HotelAppLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelAppLibrary.Data
 {
@@ -18,6 +13,8 @@ namespace HotelAppLibrary.Data
         {
             _db = db;
         }
+
+        // Get available rooms from DB based on selected date
         public List<RoomTypeModel> GetAvailableRooms(DateTime startDate, DateTime endDate)
         {
             string sql = @"select t.Id, t.Title, t.[Description], t.Price
@@ -36,6 +33,8 @@ namespace HotelAppLibrary.Data
             output.ForEach(x => x.Price = x.Price / 100);
             return output;
         }
+       
+        //  Add new record to DB
         public void BookGuest(string firstName,
                               string lastName,
                               DateTime startDate,
@@ -51,7 +50,7 @@ namespace HotelAppLibrary.Data
                 _db.SaveData(sql, new { firstName, lastName }, connectionString);
             }
 
-            sql = @"select 1 [Id], [FirstName], [LastName]
+            sql = @"select *
 	                        from Guests 
 	                        where FirstName = @firstName and LastName = @lastName";
             GuestModel guest = _db.LoadData<GuestModel, dynamic>(sql,
@@ -93,7 +92,7 @@ namespace HotelAppLibrary.Data
                          true);
         }
 
-
+        // Search a guest from DB by his Last Name
         public List<BookingFullModel> SearchBookings(string lastName)
         {
             string sql = @"	select b.Id, b.RoomId, b.GuestId, b.StartDate, b.EndDate, 
@@ -111,11 +110,14 @@ namespace HotelAppLibrary.Data
             return output;
         }
 
+        //Change the Checked In status of the customer
         public void CheckInGuest(int id)
         {
             string sql = "update Bookings set CheckedIn = 1 where Id = @id";
             _db.SaveData(sql, new { Id = id }, connectionString, false);
         }
+
+        //Get the Room Type from DB by id
         public RoomTypeModel GetRoomTypeById(int id)
         {
             string sql = "select Id,Title,[Description],Price from RoomType where Id = @id";
