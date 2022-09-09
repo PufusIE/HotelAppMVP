@@ -3,11 +3,11 @@ using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using HotelAppLibrary.Data;
 using Microsoft.Extensions.Configuration;
-using HotelAppLibrary.Databases;
+using HotelAppDataBaseAccessLibrary.Databases;
 
 namespace HotelApp.Desktop
 {
-   public partial class App : Application
+    public partial class App : Application
     {
        public static IHost? AppHost { get; private set; }
         public App()

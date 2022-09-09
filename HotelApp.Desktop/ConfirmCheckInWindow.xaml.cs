@@ -13,7 +13,6 @@ namespace HotelApp.Desktop
         {
             InitializeComponent();
             _db = db;
-
         }
 
         // Filling the information about the Guest from DB 

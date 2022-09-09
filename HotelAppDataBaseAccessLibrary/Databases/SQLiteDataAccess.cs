@@ -3,7 +3,7 @@ using System.Data;
 using Dapper;
 using System.Data.SQLite;
 
-namespace HotelAppLibrary.Databases
+namespace HotelAppDataBaseAccessLibrary.Databases
 {
     public class SQLiteDataAccess : ISQLiteDataAccess
     {

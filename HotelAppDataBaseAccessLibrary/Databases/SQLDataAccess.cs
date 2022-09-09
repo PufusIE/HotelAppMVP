@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace HotelAppLibrary.Databases;
+namespace HotelAppDataBaseAccessLibrary.Databases;
 
 public class SQLDataAccess : ISQLDataAccess
 {
@@ -25,7 +25,7 @@ public class SQLDataAccess : ISQLDataAccess
         {
             commandType = CommandType.StoredProcedure;
         }
-        
+
         string connectionString = _config.GetConnectionString(connectionStringName);
 
         // create connection to db, using to always cloe the connection

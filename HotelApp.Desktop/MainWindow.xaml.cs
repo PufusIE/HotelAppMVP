@@ -30,13 +30,12 @@ namespace HotelApp.Desktop
         //and send across the information about choosen Guest
         private void CheckInButton_Click(object sender, RoutedEventArgs e)
         {
-
            var model = (BookingFullModel)((Button)e.Source).DataContext;
 
            var checkInForm = App.AppHost!.Services.GetService<ConfirmCheckInWindow>();
            checkInForm!.PopulateChechInInfo(model);
            checkInForm!.Show();
-            
+            guestList.ItemsSource = string.Empty;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace HotelAppLibrary.Databases
+﻿namespace HotelAppDataBaseAccessLibrary.Databases
 {
     //SQLite DB Reading and Writing Interface for Dependency Injection
     public interface ISQLiteDataAccess
