@@ -10,5 +10,5 @@ AS
 	inner join dbo.Guests g on b.GuestId = g.Id
 	inner join dbo.Rooms r on b.RoomId = r.Id
 	inner join dbo.RoomType rt on r.RoomTypeId = rt.Id
-	where g.LastName = @lastName and b.StartDate = @startDate
+	where g.LastName = @lastName and b.StartDate = @startDate and b.CheckedIn = 0
 	end

@@ -102,7 +102,7 @@ namespace HotelAppLibrary.Data
 	                        inner join Guests g on b.GuestId = g.Id
 	                        inner join Rooms r on b.RoomId = r.Id
 	                        inner join RoomType rt on r.RoomTypeId = rt.Id
-	                        where g.LastName = @lastName and b.StartDate = @startDate";
+	                        where g.LastName = @lastName and b.StartDate = @startDate and b.CheckedIn = 0";
             var output = _db.LoadData<BookingFullModel, dynamic>(sql,
                                                            new { lastName, startDate = DateTime.Now.Date },
                                                            connectionString);
