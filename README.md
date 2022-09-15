@@ -15,6 +15,24 @@ Example of dependency structure:
 
 
 [ HotelApp.Web, HotelApp.Desktop ] => [ HotelAppLibrary ] => [ HotelAppDataBaseAccessLibrary  ]
+
+# Technologies that I used:
+
+WPF Core  
+ASP.NET  
+XML  
+SSDT  
+Dependency Injection  
+Interfaces and Inheritance   
+Git  
+Design Patterns  
+WOULD Framework  
+Data Validation  
+SQL Server  
+SQLite  
+SSMS  
+  
+
  
 # Setting Up
 
