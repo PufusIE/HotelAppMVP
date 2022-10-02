@@ -37,6 +37,9 @@ SSMS
 # Setting Up
 
 The only and only thing you need to do is change appsettings.json files for each project.
-You need to choose the database you want to use and either insert the connection string for SQL or specify the file location for SQLite.  
+You need to choose the database you want to use and either insert the connection string for SQL or specify the file location for SQLite.    
 
-
+# Last Words  
+This was my first real world application and currently I am making a new application that is generally much more advanced.   
+It's still in development mode but you can keep track of my progress by looking at my commits.   
+You can find this project here - https://github.com/PufusIE/RetailApp
